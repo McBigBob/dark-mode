@@ -78,7 +78,7 @@
 
     function loadHTML() {
       // Get the link from the URL query parameter
-      var link = decodeURIComponent(window.location.search.replace("d?=", ""));
+      var link = getParameterByName("url");
       if (link.indexOf("miinaharma.ee") === -1) {
         alert("Vale link.");
         return;}
