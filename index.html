@@ -82,6 +82,9 @@
     function loadHTML() {
       // Get the link from the URL query parameter
       var link = decodeURIComponent(window.location.search.replace("?=", ""));
+      if (link.indexOf("miinaharma.ee") === -1) {
+        alert("Vale link.");
+        return;}
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
@@ -105,7 +108,7 @@
             tables[1].style.border = "solid";
           } else {
             // Display an error message
-            document.getElementById("result").innerHTML = "Error: " + xhr.status;
+            document.getElementById("result").innerHTML = "Error 429 = too many requests. Error 404 = vale link. Sinu praegune Error: " + xhr.status;
           }
         } else {
           // Show the loading screen
