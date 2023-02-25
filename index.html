@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML Content Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Content Viewer</h1>
+    <form>
+      <label for="link">Enter a link to an HTML page:</label>
+      <input type="text" id="link" placeholder="https://example.com">
+      <button type="button" onclick="loadHTML()">Load HTML</button>
+    </form>
+    <div id="result"></div>
+    <script>
+      function loadHTML() {
+        var link = document.getElementById("link").value;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("result").innerHTML = xhr.responseText;
+          }
+        };
+        xhr.open("GET", link);
+        xhr.send();
+      }
+    </script>
+  </body>
+</html
