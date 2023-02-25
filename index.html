@@ -24,8 +24,8 @@
 
     /* CSS for the dark mode theme */
     body.dark-mode {
-      background-color: #333;
-      color: #fff;
+      background-color: #141414;
+      color: #ffff;
     }
   </style>
 </head>
@@ -68,10 +68,6 @@
             document.getElementById("result").innerHTML = xhr.responseText;
             // Apply dark mode theme
             document.body.classList.add("dark-mode");
-            var elements = document.getElementsByTagName("*");
-            for (var i = 0; i < elements.length; i++) {
-              elements[i].style.color = "#fff";
-            }
           } else {
             // Display an error message
             document.getElementById("result").innerHTML = "Error: " + xhr.status;
