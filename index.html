@@ -29,11 +29,11 @@
     }
 
     table {
-        opacity: 0.75;
+        opacity: 0.85;
     }
 
     .warning {
-        display: block;
+        display: none;
         margin-left: auto;
         margin-right: auto;
         border: solid;
@@ -53,11 +53,10 @@
 </head>
 <body>
     <div id="loading">
-        <h1>Laadimine...</h1>
         <img src="https://i.pinimg.com/originals/36/3c/2e/363c2ec45f7668e82807a0c053d1e1d0.gif">
     </div>
   <div id="result"></div>
-    <div class="warning">
+    <div class="warning" id="warning">
         <p>NB! Kuvatav veebisaidi sisu kuulub ainult Miina Härma Gümnaasiumile. See veebisait on loodud üksnes selle sisu alternatiivse kuvamisvahendina. Me ei oma mingit omandiõigust ega vastutust kuvatava sisu eest.</p>
     </div>
 
@@ -88,6 +87,7 @@
         if (xhr.readyState === 4) {
           // Hide the loading screen
           document.getElementById("loading").style.display = "none";
+          document.getElementById("warning").style.display = "block";
           if (xhr.status === 200) {
             // Show the result
             document.getElementById("result").innerHTML = xhr.responseText;
