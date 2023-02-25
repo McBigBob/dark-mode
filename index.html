@@ -28,8 +28,20 @@
         color: #ffffff;
     }
 
-    table {
+    .warning {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         border: solid;
+        border-radius: 5px;
+        background-color: rgb(255, 165, 0, 0.5);
+        border-color: orange;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+        width: fit-content;
+        margin-bottom: 20px;
     }
 
   </style>
@@ -40,6 +52,9 @@
         <img src="https://i.pinimg.com/originals/36/3c/2e/363c2ec45f7668e82807a0c053d1e1d0.gif">
     </div>
   <div id="result"></div>
+    <div class="warning">
+        <p>NB! Kuvatav veebisaidi sisu kuulub ainult Miina Härma Gümnaasiumile. See veebisait on loodud üksnes selle sisu alternatiivse kuvamisvahendina. Me ei oma mingit omandiõigust ega vastutust kuvatava sisu eest.</p>
+    </div>
 
   <!-- Include the proxy script here -->
   <script>
@@ -80,6 +95,8 @@
             // Set background color of last table to black
             var tables = document.getElementsByTagName("table");
             tables[tables.length - 1].style.backgroundColor = "#000000";
+            var tables = document.getElementsByTagName("table");
+            tables[1].style.border = "solid";
           } else {
             // Display an error message
             document.getElementById("result").innerHTML = "Error: " + xhr.status;
