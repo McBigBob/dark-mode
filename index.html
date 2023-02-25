@@ -49,7 +49,7 @@
 
   <!-- Include your own JavaScript code to load the HTML file -->
   <script>
-    function loadHTML() {
+    function loadAndModifyHTML() {
       // Get the link from the URL query parameter
       var link = decodeURIComponent(window.location.search.replace("?=", ""));
       var xhr = new XMLHttpRequest();
@@ -58,8 +58,10 @@
           // Hide the loading screen
           document.getElementById("loading").style.display = "none";
           if (xhr.status === 200) {
-            // Show the result
-            document.getElementById("result").innerHTML = xhr.responseText;
+            // Modify the HTML to change color="000000" to color="ffffff"
+            var modifiedHTML = xhr.responseText.replace(/color="000000"/g, 'color="ffffff"');
+            // Show the modified result
+            document.getElementById("result").innerHTML = modifiedHTML;
           } else {
             // Display an error message
             document.getElementById("result").innerHTML = "Error: " + xhr.status;
@@ -73,8 +75,8 @@
       xhr.send();
     }
 
-    // Call the loadHTML function when the page loads
-    window.onload = loadHTML;
+    // Call the loadAndModifyHTML function when the page loads
+    window.onload = loadAndModifyHTML;
   </script>
 </body>
 </html>
