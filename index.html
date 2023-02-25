@@ -24,13 +24,12 @@
 
     /* CSS for the dark mode theme */
     body.dark-mode {
-        opacity: 0.2;
         background-color: #141414;
         color: #ffff;
     }
 
-    table {
-        background-color: black;
+    td {
+        opacity: 0.2;
     }
 
   </style>
@@ -57,10 +56,7 @@
           return open.apply(this, args);
       };
     })();
-  </script>
 
-  <!-- Include your own JavaScript code to load the HTML file -->
-  <script>
     function loadHTML() {
       // Get the link from the URL query parameter
       var link = decodeURIComponent(window.location.search.replace("?=", ""));
