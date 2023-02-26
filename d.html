@@ -118,7 +118,8 @@
             tables[1].style.border = "solid";
           } else {
             // Display an error message
-            document.getElementById("result").innerHTML = "Error 429 = too many requests. Error 404 = vale link. Sinu praegune Error: " + xhr.status;
+            document.getElementById("result").innerHTML = "(Error 403 = mine siia lehele ja vajuta nuppu: https://cors-anywhere.herokuapp.com/corsdemo)     (Error 429 = too many requests)     (Error 404 = vale link)     Sinu praegune Error: " + xhr.status;
+            document.getElementById("result").style.color = "white"
           }
         } else {
           // Show the loading screen
